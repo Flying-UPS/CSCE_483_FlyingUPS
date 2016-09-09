@@ -1,0 +1,260 @@
+\documentclass[12pt]{extarticle}
+\usepackage{amsmath, amsthm, latexsym, tikz, graphicx, listings, microtype, mathtools, soul, color, fancyhdr, amssymb}
+\usepackage[margin=1in]{geometry}
+
+\newenvironment{myindentpar}[1]%
+ {\begin{list}{}%
+         {\setlength{\leftmargin}{#1}}%
+         \item[]%
+ }
+ {\end{list}}
+ 
+\DeclarePairedDelimiter\abs{\lvert}{\rvert}%
+\DeclarePairedDelimiter\norm{\lVert}{\rVert}%
+
+% Swap the definition of \abs* and \norm*, so that \abs
+% and \norm resizes the size of the brackets, and the 
+% starred version does not.
+\makeatletter
+\let\oldabs\abs
+\def\abs{\@ifstar{\oldabs}{\oldabs*}}
+%
+\let\oldnorm\norm
+\def\norm{\@ifstar{\oldnorm}{\oldnorm*}}
+\makeatother
+
+\definecolor{lightgray}{gray}{0.65}
+\definecolor{pinegreen}{RGB}{1, 171, 161}
+\definecolor{lightblue}{RGB}{135, 206, 250}
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+\definecolor{darkblue}{rgb}{0.0,0.0,0.6}
+\definecolor{cyan}{rgb}{0.0,0.6,0.6}
+
+\newcommand*{\Value}{\frac{1}{2}x^2}%
+\newcommand{\hlc}[2][yellow]{ {\sethlcolor{#1} \hl{#2}} }
+
+\lstset{frame=tb,
+  language=SQL,
+  breaklines=true,
+  showstringspaces=false,
+  columns=flexible,
+  numbers=none,
+  tabsize=3,
+  escapeinside={(*@}{@*)}
+  %,
+  %commentstyle=\color{dkgreen},
+  %stringstyle=\color{mauve}
+}
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\rfoot{\thepage}
+\pagenumbering{arabic}
+
+\definecolor{codegray}{gray}{0.9}
+\newcommand{\code}[1]{\colorbox{codegray}{\texttt{#1}}}
+
+\begin{document}
+
+\begin{center}
+    {\large \underline{Kirfman, Andrew Senior Design Notebook}}
+\end{center}
+
+\ \\
+\textbf{Why a Notebook?}
+
+\begin{myindentpar}{6.5mm}
+
+    \noindent
+    State purpose here!
+
+\end{myindentpar}
+
+\ \\
+\textbf{Structure and Presentation}
+
+\begin{myindentpar}{6.5mm}
+
+    \noindent
+    State about how this book will be organized!
+
+\end{myindentpar}
+
+% ---------------------------------------------------------------------------- %
+% Wednesday, September 7th                                                     %
+% ---------------------------------------------------------------------------- %
+
+\ \\
+\textbf{Wednesday, September $7^{th}$}
+
+\ \\
+\underline{Miscellaneous}:
+
+\begin{myindentpar}{6.5mm}
+
+    \noindent
+    Dr. Song instructed us to clean our workspace so that it would be ready for us to use during the rest of the semester.  During the cleaning process, we gathered some supplies from around the lab that we believed would be useful to us during the semester.  Among these things were the following items: a Raspberry Pi, an Arduino, a breadboard, assorted prototyping wires, and old drone parts from previous semesters including 4-5 motors, fan blades, aluminum frame pieces, and some other assorted misc. replacement parts.  These spare parts were gathered into a large labeled box and stashed away for future use.  
+
+\end{myindentpar}
+
+\vspace{-3mm}
+\ \\
+\underline{Team Discussion}:
+
+\begin{myindentpar}{6.5mm}
+    
+    \noindent
+    The meeting on the $6^{th}$ marks the first meeting of our senior design team.  The team currently consists of myself, Sam Gwydir, Regan Vecera, and Diego Oliveros.  For future reference, the entire team's contact information is provided in the table below:
+    
+    \begin{displaymath}
+        \begin{array}{|c|c|c|}
+            \hline
+                \text{Name} & \text{Phone Number} & \text{Email Address} \\
+            \hline
+                \text{Andrew Kirfman} & \text{214-448-8654} & \text{andrew.kirfman@tamu.edu} \\
+                \text{San Gwydir} & \text{713-446-0367} & \text{sam@samgwydir.com} \\
+                \text{Regan Vecera} & \text{979-966-3313} & \text{doliveros@tamu.edu} \\
+                \text{Diego Oliveros} & \text{979-224-2304} & \text{regan.vecera@tamu.edu} \\
+                
+            \hline
+        \end{array}
+    \end{displaymath}
+    
+    \ \\
+    Our meeting was divided into two parts, a personal "meet and greet" and a high-level technical discussion.  For the personal portion, we attempted to apply the wisdom from the book \textit{The Five Dysfunctions of a Team:Leadership}.  In doing so, we hope that we will not unknowingly fall victim of any of the dysfunctions listed in the book.  As team leader, I attempted to create an environment where we could talk to each other and attempt to build trust and encourage healthy discussion.  The majority of the time spent during this part of the meeting was in a team exercise.  Each of us introduced ourselves to the group (since even though we've had classes together in the past, no one in our group was particularly acquainted beforehand).  After introductions, we each individually talked about past teamwork experiences, specifically CSCE-315 and CSCE-462 since they represent some of the most recent experiences.  In doing so, we discovered each others' work strategies and how we approach and form ideas about problems.  
+    
+    \ \\
+    After discussing our projects, we each spent time talking about our own dysfunctions (since none of us are perfect) and how they have affected us in the past.  I specifically mentioned that I sometimes can take control of a project and attempt to do it all myself instead of sharing the work equally among others.  I also have issues with trust in that I have difficulty accepting the work that others do at face value without extensive checking.  Essentially, I fear placing my own grade in the hands of others.  Interestingly, most of the team shared similar sentiments about their school work.  We are hopeful that our common backgrounds and experiences with teamwork will allow us to function more effectively in the future.  
+
+\end{myindentpar}
+
+\vspace{-3mm}
+\ \\
+\underline{Assignments}:
+
+\begin{myindentpar}{6.5mm}
+
+    \noindent
+    During the technical portion of our meeting, the overarching discussion that we all participated in led to some simple questions whose answers would help towards better understanding and contextualizing how we were planned to achieve our goal.  These questions pertained to the following topics: How to control the drone when it is in the air? What were the technical specifications of the motors and other drone parts, and would they potentially be sufficient for use in our solution? How would we intend to power the drone and the internal computer components? and How would we communicate with the drone and determine its location?
+    
+    \ \\
+    Each of these questions were divided up amongst us so that each of us had something to work on during the days before our next lab meeting.  Work was assigned as follows:
+    
+    \begin{itemize}
+        \setlength\itemsep{-0.1em}
+    
+        \item \textbf{Andrew}: Research into the technical specifications of the drone parts and their relative usefulness in our project.   
+        \item \textbf{Sam}: Find out how we can control the drone and issue commands/directions to it.  
+        \item \textbf{Regan}: Determine the feasibility of usb GPS and 4G modules that we could possibly plug into an on-board raspberry pi computer.  
+        \item \textbf{Diego}: Qualitatively measure power consumption of all possible devices and find some examples of battery systems that we potentially will need to use on the drone.  
+        
+    \end{itemize}
+    
+\end{myindentpar}
+\vspace{-5mm}
+
+\ \\
+\underline{Pictures}:
+
+\begin{center}
+    Figure \#1: Some rough sketches from our meeting. 
+\end{center}
+\begin{center}
+    %\includegraphics[scale=1.0]{}
+\end{center}
+
+\begin{center}
+    Figure \#XXX: One of the motors we discovered in lab.
+\end{center}
+\begin{center}
+    %\includegraphics[scale=1.0]{}
+\end{center}
+
+% UPLOAD PICTURES HERE
+
+% ---------------------------------------------------------------------------- %
+% Thursday, September 8th                                                      %
+% ---------------------------------------------------------------------------- %
+
+\ \\
+\textbf{Thursday, September $8^{th}$}
+
+\ \\
+\underline{Miscellaneous}:
+
+\begin{myindentpar}{6.5mm}
+
+    \noindent
+    Since two of our group members are unable to meet on Tuesdays and Thursdays, we did not spend time engaged in extended discussion.  Instead, we simply recorded the answers to the questions asked during the previous meeting and then planned to meet on Friday to finish the group document.  
+
+\end{myindentpar}
+
+\ \\
+\underline{Team Discussion}:
+
+\begin{myindentpar}{6.5mm}
+
+    \noindent
+    No meaningful team discussion was engaged in on this day.  
+
+\end{myindentpar}
+
+\ \\
+\underline{Assignments/Work Done}:
+
+\begin{myindentpar}{6.5mm}
+
+    \noindent
+    The answers to each of the four questions posed on Wednesday the $7^{th}$ is as follows:
+    \begin{itemize}
+        \setlength\itemsep{-0.1em}
+    
+        \item \textbf{Andrew}: The motors that we found that belonged to an old discarded drone are discontinued by the original manufacturer. They don't even have any information that we could use to identify their technical specifications. As such, we may be required to purchase new motors that we can use in our final design. Beforehand, these motors will suffice for testing.
+        \item \textbf{Sam}: Discovered a flight controller used by previous projects. The website for said flight controller contains helpful information about drone construction and configuration.
+        \item \textbf{Regan}: There are a variety of flight controllers that we could use each having different modules and features. A cheap option for flight control would be the MultiWii. Going with this option would require separate GPS module, antenna, and 4G connection. Another popular option is the Navio2. This one has a variety of built in features and improvements from previous versions. It has an onboard GPS but requires an antenna. This setup would cost around \$200. Lastly, we could use the Pixhawk that we discovered in lab. This would cut down the cost significantly, but the Pixhawk requires a separate GPS module, antenna, and will require a 4G dongle. It is compatible with RPi using something called MavLink.
+        \item \textbf{Diego}: Determined that we potentially will need two batteries, one for the motors which require approximately 12 volts, and another for the raspberry pi that requires 5 volts. Additionally, if the raspberry pi is unable to pull the amount of current that it needs, it begins to disable key system features such as networking and peripherals. If power fluctuates while in flight, it could be disastrous if the raspberry pi powers off. This, especially given that the things turned off due to lack of power do not turn back on unless you manually restart the system.
+        
+    \end{itemize}
+
+\end{myindentpar}
+
+% ---------------------------------------------------------------------------- %
+% Friday, September 9th                                                        %
+% ---------------------------------------------------------------------------- %
+
+\ \\
+\textbf{Friday, September $9^{th}$}
+
+\ \\
+\underline{Miscellaneous}:
+
+\begin{myindentpar}{6.5mm}
+
+    \noindent
+    % Stuff here!
+
+\end{myindentpar}
+
+\ \\
+\underline{Team Discussion}
+
+\begin{myindentpar}{6.5mm}
+
+    \noindent
+    % Stuff here!
+
+\end{myindentpar}
+
+\ \\
+\underline{Assignments}:
+
+\begin{myindentpar}{6.5mm}
+
+    \noindent
+    % Stuff here!
+
+\end{myindentpar}
+
+\end{document}
