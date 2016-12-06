@@ -1,0 +1,26 @@
+#wrap {
+	width:100%;
+	margin:0 auto;
+}
+#left_col {
+	float:left;
+	width:22%;
+}
+#right_col {
+	float:right;
+	width:78%;
+}
+#title {
+	text-align: center;
+	font-family: "Times New Roman", Times, serif;
+	font-size: 1.8em;
+}
+#selection {
+	text-align: left;
+	padding: 30px;
+	font-family: arial;
+}
+#map {
+	height:50em;
+	width:100%;
+}

@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+	<title>Quick Unmanned Aerial Courier</title>
+    <meta name="viewport" content="initial-scale=1.0">
+		<link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="utf-8">
+  </head>
+		<div id="wrap">
+			<div id="left_col">
+				<img src="logo.jpg" align="middle">
+				<p id="title">
+					QUAC<br/>
+					Quick Unmanned Aerial Courier<br/>
+				</p>
+				<form onsubmit="submitAddress(); return false">
+					<p id="selection">
+						Please enter the delivery destination address:<br/>
+						<input type="text" name="destination" id="destination"><br/><br/>
+						Or select destination on map and press the SEND button. <br/>
+						<input type="submit" value="SEND"><br/>
+					</p>
+				</form>
+			</div>
+			<div id="right_col">
+				<div id="map"></div>
+			</div>
+		</div>
+		<script src="/socket.io/socket.io.js"></script>
+		<script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+		<script src="clickableMap.js"></script>
+		<script src="sendAddress.js"></script>
+		<script src="communication.js"></script>
+	</body>
+</html>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC6q30Zu5gZLkFtxG6gxUgDQbht2L5cHlw&callback=initMap"
+async defer></script>
